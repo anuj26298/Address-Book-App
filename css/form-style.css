@@ -14,8 +14,10 @@ body html {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 15px 0;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
+    border: 0px solid black;
 }
 
 .logo-content {
@@ -43,4 +45,74 @@ body html {
 
 .book-text {
     color: #42515f;
+}
+
+.form-content {
+    min-height: calc(100% - 80px);
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid #008cff;
+}
+
+.form {
+    width: 65%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 44px 60px;
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30x 6px #00000029;
+    opacity: 1;
+}
+
+.form-header {
+    font: normal normal normal 28px/37px Roboto;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-top: 15px;
+    padding-bottom: 13px;
+    padding-top: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    opacity: 1;
+    border-start-start-radius: 8px;
+    border-start-end-radius: 8px;
+
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 0px solid #F7F7F7;
+    background-color: #ffffff;
+}
+
+.label {
+    min-width: 140px;
+}
+
+label {
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #42515F;
+    opacity: 1;
+}
+.text{
+    font: normal normal normal 16px/24px Roboto;
+    opacity: 1;
+    color: #42515f;
+}
+.input{
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    resize: vertical;
 }
