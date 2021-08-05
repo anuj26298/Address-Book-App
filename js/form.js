@@ -21,3 +21,45 @@ window.addEventListener('DOMContentLoaded',(event) =>{
         }
     })
 });
+
+const save = () =>{
+    try{
+        let addressBookData = createAddressBook();
+        createAndUpdateStorage(addressBookData);
+    }catch(e){
+        return;
+    }
+}
+
+const createAddressBook = () =>{
+    let addressBookData = new Person();
+    addressBookData.fullName = getInputValueById("#name");
+    addressBookData.mobileNumber = getInputValueById("#moblie");
+    addressBookData.address = getInputValueById("#address");
+    addressBookData.city = getInputValueById("#city");
+    addressBookData.state = getInputValueById("#state");
+    addressBookData.zipCode = getInputValueById("#zipcode");
+    alert(addressBookData.toString());
+    return addressBookData;
+}
+
+const getInputValueById = (id) =>{
+    let value = document.querySelector(id).value
+    return value;
+}
+
+function createAndUpdateStorage(addressBookData){
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if(addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    }else{
+        addressBookList = [addressBookData];
+    }
+    alert(addressBookData.toString());
+    localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
+}
+
+const setTextValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
