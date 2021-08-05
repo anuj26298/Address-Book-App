@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/form-style.css">
+    <script src="/js/form.js"></script>
+    <script src="/js/PersonData.js"></script>
     <title>Address Book</title>
 </head>
 
@@ -37,6 +39,7 @@
             <div class="row-content">
                 <label for="mobile" class="label text">Mobile</label>
                 <input type="tel" name="mobile" id="mobile" class="input" placeholder="Mobile" required>
+                <error-output class="mobile-error" for="number"></error-output>
             </div>
             <div class="row-content">
                 <label for="address" class="label text">Address</label>
