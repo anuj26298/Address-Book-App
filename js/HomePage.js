@@ -26,12 +26,22 @@ const createInnerHtml = () => {
         <td>${personData._zipCode}</td>
         <td>${personData._mobile}</td>
         <td>
-         <img src="/assests/icons/create-black-18dp.svg" id="1" alt="delete">
-         <img src="/assests/icons/delete-black-18dp.svg" id="1" alt="edit">
+         <img src="/assests/icons/create-black-18dp.svg" id="${personData._id}" alt="delete">
+         <img src="/assests/icons/delete-black-18dp.svg" id="${personData._id}" alt="edit">
         </td>
       </tr>
      `;
     }
 
     document.querySelector('#display').innerHTML = innerHtml
+}
+
+const remove = (node) => {
+    let personData = personList.find(person => person._id == node.id);
+    if(!personData) return;
+    const index = personList.map(person => person._id)
+                                .indexOf(personData._id);
+    personList.splice(index,1);
+    localStorage.setItem("AddressBookList",JSON.stringify(personList));
+    createInnerHtml();
 }
