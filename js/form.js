@@ -1,37 +1,37 @@
-window.addEventListener('DOMContentLoaded',(event) =>{
+window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector("#name");
     const textError = document.querySelector(".text-error");
-    name.addEventListener('input',function(){
-        try{
+    name.addEventListener('input', function () {
+        try {
             new Person().fullName = name.value;
             textError.textContent = "";
-        }catch(e){
+        } catch (e) {
             textError.textContent = e;
         }
     });
 
     const mobileNumber = document.querySelector("#mobile");
     const mobileError = document.querySelector(".mobile-error");
-    mobileNumber.addEventListener('input',function(){
-        try{
+    mobileNumber.addEventListener('input', function () {
+        try {
             new Person().mobileNumber = mobileNumber.value;
             mobileError.textContent = "";
-        }catch(e){
+        } catch (e) {
             mobileError.textContent = e;
         }
     })
 });
 
-const save = () =>{
-    try{
+const save = () => {
+    try {
         let addressBookData = createAddressBook();
         createAndUpdateStorage(addressBookData);
-    }catch(e){
+    } catch (e) {
         return;
     }
 }
 
-const createAddressBook = () =>{
+const createAddressBook = () => {
     let addressBookData = new Person();
     addressBookData.fullName = getInputValueById("#name");
     addressBookData.mobileNumber = getInputValueById("#moblie");
@@ -43,23 +43,31 @@ const createAddressBook = () =>{
     return addressBookData;
 }
 
-const getInputValueById = (id) =>{
+const resetForm = () =>{
+    setTextValue('#name','');
+    setTextValue('#mobile','');
+    setTextValue('#address','');
+    setTextValue('#city','Select City');
+    setTextValue('#state','Select State');
+    setTextValue('#zipcode','Enter ZipCode');
+}
+const getInputValueById = (id) => {
     let value = document.querySelector(id).value
     return value;
 }
 
-function createAndUpdateStorage(addressBookData){
+function createAndUpdateStorage(addressBookData) {
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
-    if(addressBookList != undefined){
+    if (addressBookList != undefined) {
         addressBookList.push(addressBookData);
-    }else{
+    } else {
         addressBookList = [addressBookData];
     }
     alert(addressBookData.toString());
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
 }
 
-const setTextValue = (id,value) => {
+const setTextValue = (id, value) => {
     const element = document.querySelector(id);
     element.value = value;
 }

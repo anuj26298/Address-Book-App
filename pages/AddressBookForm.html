@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/form-style.css">
     <script src="/js/form.js"></script>
     <script src="/js/PersonData.js"></script>
+    <script src="/js/HomePage.js"></script>
     <title>Address Book</title>
 </head>
 
@@ -30,7 +31,7 @@
             <div class="form-header-text"> PERSON ADDRESS FORM</div>
             <img src="/assests/icons/cancel-icon.PNG" alt="cancel">
         </div>
-        <form action="#" class="form" onsubmit="save()">
+        <form action="#" class="form" onsubmit="save()" onreset="resetForm()">
             <div class="row-content">
                 <label for="name" class="label text">Full Name</label><br>
                 <input type="text" class="input text" name="firstName" id="name" placeholder="Full Name" required>
@@ -49,6 +50,7 @@
                 <div class="city">
                     <label for="city" class="label text">City</label>
                         <select name="city" id="city">
+                            <option value="" disabled selected>Select City</option>
                             <option value="meerut">Meerut</option>
                             <option value="lucknow">Lucknow</option>
                             <option value="jhasni">Jhasni</option>
@@ -62,6 +64,7 @@
                     <div class="state">
                         <label for="state" class="label text">State</label>
                         <select name="state" id="state">
+                            <option value="" disabled selected>Select State</option>
                             <option value="up">Uttar Pradesh</option>
                             <option value="haryana">Haryana</option>
                             <option value="maharastra">Maharastra</option>
