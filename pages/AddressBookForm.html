@@ -12,6 +12,7 @@
     <script src="/js/form.js"></script>
     <script src="/js/PersonData.js"></script>
     <script src="/js/HomePage.js"></script>
+    <script src="/js/siteProperties.js"></script>
     <title>Address Book</title>
 </head>
 
@@ -29,9 +30,9 @@
     <div class="form-content">
         <div class="form-header">
             <div class="form-header-text"> PERSON ADDRESS FORM</div>
-            <img src="/assests/icons/cancel-icon.PNG" alt="cancel">
+            <img src="/assests/icons/cancel-icon.PNG" alt="cancel" onclick="cancel()">
         </div>
-        <form action="#" class="form" onsubmit="save()" onreset="resetForm()">
+        <form action="#" class="form" onsubmit="save(event)" onreset="resetForm()">
             <div class="row-content">
                 <label for="name" class="label text">Full Name</label><br>
                 <input type="text" class="input text" name="firstName" id="name" placeholder="Full Name" required>
